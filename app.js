@@ -22,10 +22,14 @@ bot.on('message', (data) => {
 //Response to data
 function handleMessage(message) {
     if (message.includes(' wattbank')) {
-        espModule();
+        wattBank();
+    } else if (message.includes(' photizzo')) {
+        photizzoExec();
+    } else if (message.includes(' help')) {
+        runHelp();
     }
 }
-function espModule() {
+function wattBank() {
     axios.get('https://xttreme.herokuapp.com/products')
         .then(res => {
             const searchedResult = res.data.data[0].product_description;
@@ -34,4 +38,20 @@ function espModule() {
             };
             bot.postMessageToChannel('general', `Searched result : ${searchedResult}`, params);
         });
+}
+function photizzoExec() {
+    axios.get('https://api.yomomma.info')
+        .then(res => {
+            const searchedResult = res.data.joke;
+            const params = {
+                icon_emoji: ':componenthub:'
+            };
+            bot.postMessageToChannel('general', `Result : ${searchedResult}`, params);
+        });
+}
+function runHelp() {
+    const params = {
+        icon_emoji: ':question:'
+    };
+    bot.postMessageToChannel('general', `type @componentbot with either 'photizzo' or 'wattbank' to get a response`, params);
 }
