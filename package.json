@@ -1,0 +1,23 @@
+{
+  "name": "slackbot-nodejs",
+  "version": "1.0.0",
+  "description": "component slackbot with nodejs",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bluebird2000/slackbot_nodeJS.git"
+  },
+  "author": "Bluebird",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bluebird2000/slackbot_nodeJS/issues"
+  },
+  "homepage": "https://github.com/Bluebird2000/slackbot_nodeJS#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "slackbots": "^1.1.0"
+  }
+}
